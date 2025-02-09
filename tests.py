@@ -39,7 +39,7 @@ class TestBooksCollector:
         assert len(collector.books_genre) == len(books)
 
     @pytest.mark.parametrize('book_name', ['Очень длинное название книги для проверки условия на длину', ''])
-    def test_add_new_book_no_books_added(self, book_name):
+    def test_add_new_book_invalid_length_no_books_added(self, book_name):
         collector = BooksCollector()
         collector.add_new_book(book_name)
 
@@ -62,7 +62,7 @@ class TestBooksCollector:
         assert collector.get_book_genre(book_name) == book_genre
 
     @pytest.mark.parametrize('book_name', ['Пересадочная станция', 'Гарри Поттер', 'Маленький принц'])
-    def test_add_new_book_one_book_without_genre_books_not_found(self, book_name):
+    def test_get_book_genre_one_book_without_genre_not_found(self, book_name):
         collector = BooksCollector()
         collector.add_new_book(book_name)
 
