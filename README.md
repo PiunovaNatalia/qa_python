@@ -10,3 +10,4 @@
 10. test_add_book_in_favorites_one_book_added - проверяет добавление книги в список избранных
 11. test_delete_book_from_favorites_book_is_deleted - проверяет удаление книги из избранного
 12. test_get_list_of_favorites_books_returned_all_favourite_books - проверяет, что метод возвращает список всех избранных книг
+13. test_get_book_genre_returned_genre - проверяет, что метод возвращает жанр книги по её имени

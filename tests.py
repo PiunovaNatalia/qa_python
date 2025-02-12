@@ -145,3 +145,14 @@ class TestBooksCollector:
         collector.add_book_in_favorites(book_name_2)
 
         assert collector.get_list_of_favorites_books() == expected_result
+
+    # Добавлена позитивная проверка после ревью - получаем жанр книги по её имени
+    def test_get_book_genre_returned_genre(self):
+        collector = BooksCollector()
+        book_name = 'Пересадочная станция'
+        book_genre = 'Фантастика'
+
+        collector.add_new_book(book_name)
+        collector.set_book_genre(book_name, book_genre)
+
+        assert collector.get_book_genre(book_name) == book_genre
